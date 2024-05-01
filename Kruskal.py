@@ -1,4 +1,4 @@
-def find(parent, i): #Find rpot of i
+def find(parent, i): #Find root of i
     if parent[i] == i:
         return i
     return find(parent, parent[i])
