@@ -16,7 +16,7 @@ def prim_mst(graph):
             result.append((parents[u], u, graph[u][parents[u]]))
             mst_weight += graph[u][parents[u]]  # Add the weight of the edge to the MST
         for v in range(size):  # Update the key values and parents of the adjacent vertices of the current vertex
-            if graph[u][v] < key_values[v] and not in_mst[v] and graph[u][v] != 0:
+            if graph[u][v] < key_values[v] and not in_mst[v] and graph[u][v] != 0: #Update this to not get wrong on graph
                 key_values[v] = graph[u][v]
                 parents[v] = u
 
