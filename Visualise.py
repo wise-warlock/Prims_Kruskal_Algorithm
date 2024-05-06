@@ -35,3 +35,22 @@ def draw_graph(G_original, G_mst):
 
     plt.title("MST")
     plt.figure()
+
+def draw_delete_graph_for_runtime(G_original, G_mst):
+    # Draw the original graph
+    pos = nx.spring_layout(G_original)
+    nx.draw_networkx(G_original, pos, with_labels=True, node_color='lightblue', edge_color='gray')
+    labels = nx.get_edge_attributes(G_original, 'weight')
+    nx.draw_networkx_edge_labels(G_original, pos, edge_labels=labels)
+
+    plt.title("Original Graph")
+    plt.clf()
+
+    # Draw the MST graph
+    pos = nx.spring_layout(G_mst)
+    nx.draw_networkx(G_mst, pos, with_labels=True, node_color='lightblue', edge_color='red')
+    labels = nx.get_edge_attributes(G_mst, 'weight')
+    nx.draw_networkx_edge_labels(G_mst, pos, edge_labels=labels)
+
+    plt.title("MST")
+    plt.clf()
